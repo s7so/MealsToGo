@@ -71,5 +71,6 @@ Use Android Studio (for Android) and Xcode (for iOS) to diagnose platform-specif
 - Use 'gpt-4o' as the model name for OpenAI's GPT-4 with vision capabilities
 - **Lesson:  Performance issues with large lists in FlatList can be improved by using `getItemLayout` to help React Native skip measurement of the list items.**
 - **Lesson:  Be careful of Android and iOS compatibility with styling. Use `Platform.OS` to switch between styles when necessary.**
+- **Lesson: Ensure fontFamily values match the defined values in theme/fonts.js to avoid parsing errors**
 
 # Scratchpad
