@@ -72,5 +72,9 @@ Use Android Studio (for Android) and Xcode (for iOS) to diagnose platform-specif
 - **Lesson:  Performance issues with large lists in FlatList can be improved by using `getItemLayout` to help React Native skip measurement of the list items.**
 - **Lesson:  Be careful of Android and iOS compatibility with styling. Use `Platform.OS` to switch between styles when necessary.**
 - **Lesson: Ensure fontFamily values match the defined values in theme/fonts.js to avoid parsing errors**
+- **Lesson: Use react-native-paper's Icon component for consistent star ratings across platforms**
+- **Lesson: Use color prop in Icon component to customize star ratings appearance**
+- **Lesson: Use SVG for high-quality, customizable star ratings in React Native**
+- **Lesson: Ensure correct relative paths when importing components to avoid bundling errors**
 
 # Scratchpad

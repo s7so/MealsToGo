@@ -1,9 +1,9 @@
 import React from "react";
 import styled from 'styled-components/native';
-
 import { Avatar, Card, Text } from 'react-native-paper';
-
-
+import { View } from 'react-native';
+import Rating from './Rating';
+import { colors } from '../infrastructure/theme/colors';
 const RestaurantCard = styled(Card)`
   background-color: ${({ theme }) => theme.colors.bg.primary};
   margin: 16px;
@@ -18,6 +18,7 @@ const CardHeader = styled(Card.Title)`
   padding: 16px;
 `;
 
+
 const Title = styled.Text`
   color: ${({ theme }) => theme.colors.ui.primary};
   font-family: ${({ theme }) => theme.fonts.heading};
@@ -27,13 +28,6 @@ const Title = styled.Text`
 const Address = styled.Text`
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.fontSizes.caption};
-  color: ${({ theme }) => theme.colors.ui.secondary};
-`;
-
-const Rating = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.body};
-  font-size: ${({ theme }) => theme.fontSizes.caption};
-  padding-right: 16px;
   color: ${({ theme }) => theme.colors.ui.secondary};
 `;
 
@@ -85,7 +79,11 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             )}
           </AvatarContainer>
         )}
-        right={(props) => <Rating {...props}>⭐ {rating}</Rating>}
+        right={(props) => (
+          <View {...props}>
+            <Rating rating={rating} color={colors.ui.quaternary} size={16} />
+          </View>
+        )}
       />
       <Content>
         <StatusText isOpen={isOpenNow && !isClosedTemporarily}>
