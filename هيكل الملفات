@@ -1,0 +1,7 @@
+app/
+├─ assets/
+│  └─ icons/ # هنا توضع ملفات SVG أو PNG للأيقونات
+│     ├─ home.svg
+│     ├─ search.svg
+│     ├─ heart.svg
+│     └─ profile.svg 

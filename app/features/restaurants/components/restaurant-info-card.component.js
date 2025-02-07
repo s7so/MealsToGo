@@ -1,13 +1,22 @@
 import React from "react";
-import styled from 'styled-components/native';
-import { Avatar, Card, Text } from 'react-native-paper';
-import { View } from 'react-native';
-import Rating from './Rating';
-import { colors } from '../infrastructure/theme/colors';
+import styled from "styled-components/native";
+import { Avatar, Card, Text } from "react-native-paper";
+import { View, Platform } from "react-native";
+import Rating from "./Rating";
+import { colors } from "../infrastructure/theme/colors";
+import SvgStatus from "../../../components/SvgStatus";
+import { Spacer } from "../../../components/Spacer";
+
 const RestaurantCard = styled(Card)`
   background-color: ${({ theme }) => theme.colors.bg.primary};
   margin: 16px;
-
+  border-radius: ${Platform.OS === "ios" ? "16px" : "0"};
+  elevation: ${Platform.OS === "android" ? 4 : 0};
+  shadow-color: ${Platform.OS === "ios" ? "#000" : "transparent"};
+  shadow-offset: ${Platform.OS === "ios" ? "0px 2px" : "0 0"};
+  shadow-opacity: ${Platform.OS === "ios" ? 0.1 : 0};
+  shadow-radius: ${Platform.OS === "ios" ? "4px" : "0"};
+  border-radius: 16px;
 `;
 
 const CoverImage = styled(Card.Cover)`
@@ -17,7 +26,6 @@ const CoverImage = styled(Card.Cover)`
 const CardHeader = styled(Card.Title)`
   padding: 16px;
 `;
-
 
 const Title = styled.Text`
   color: ${({ theme }) => theme.colors.ui.primary};
@@ -29,6 +37,13 @@ const Address = styled.Text`
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.fontSizes.caption};
   color: ${({ theme }) => theme.colors.ui.secondary};
+`;
+
+const StatusContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
 `;
 
 const StatusText = styled(Text)`
@@ -51,21 +66,24 @@ const AvatarContainer = styled.View`
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
-    name = "Hussein Restaurant",
+    id,
+    name = "Disfrutar",
     icon,
-    photos = [
-      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-    ],
-    address = "100 Main St, Anytown, USA",
-    rating = 4.5,
+    photos = [],
+    address = "",
+    rating = 0,
     isClosedTemporarily = false,
     isOpenNow = true,
   } = restaurant;
 
-  const statusText = isClosedTemporarily ? "مغلق مؤقتاً" : isOpenNow ? "مفتوح الآن" : "مغلق";
+  const statusText = isClosedTemporarily
+    ? "مغلق مؤقتاً"
+    : isOpenNow
+    ? "مفتوح الآن"
+    : "مغلق";
 
   return (
-    <RestaurantCard mode="elevated">
+    <RestaurantCard mode="elevated" key={id}>
       <CoverImage source={{ uri: photos[0] }} />
       <CardHeader
         title={<Title>{name}</Title>}
@@ -86,9 +104,13 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         )}
       />
       <Content>
-        <StatusText isOpen={isOpenNow && !isClosedTemporarily}>
-          {statusText}
-        </StatusText>
+        <StatusContainer>
+          <SvgStatus isOpen={isOpenNow && !isClosedTemporarily} size={28} />
+          <Spacer position="right" size={8} />
+          <StatusText isOpen={isOpenNow && !isClosedTemporarily}>
+            {statusText}
+          </StatusText>
+        </StatusContainer>
       </Content>
     </RestaurantCard>
   );

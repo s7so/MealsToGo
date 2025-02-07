@@ -70,11 +70,37 @@ Use Android Studio (for Android) and Xcode (for iOS) to diagnose platform-specif
 - When using seaborn styles in matplotlib, use 'seaborn-v0_8' instead of 'seaborn' as the style name due to recent seaborn version changes
 - Use 'gpt-4o' as the model name for OpenAI's GPT-4 with vision capabilities
 - **Lesson:  Performance issues with large lists in FlatList can be improved by using `getItemLayout` to help React Native skip measurement of the list items.**
-- **Lesson:  Be careful of Android and iOS compatibility with styling. Use `Platform.OS` to switch between styles when necessary.**
+- **Lesson: Be careful of Android and iOS compatibility with styling. Use `Platform.OS` to switch between styles when necessary.**
 - **Lesson: Ensure fontFamily values match the defined values in theme/fonts.js to avoid parsing errors**
 - **Lesson: Use react-native-paper's Icon component for consistent star ratings across platforms**
 - **Lesson: Use color prop in Icon component to customize star ratings appearance**
 - **Lesson: Use SVG for high-quality, customizable star ratings in React Native**
 - **Lesson: Ensure correct relative paths when importing components to avoid bundling errors**
+- **Lesson: Use SVG for consistent and customizable status icons in React Native**
+- **Lesson: Use `margin-left: auto` to align elements to the right in flex containers**
+- **Lesson: Use Spacer component for consistent spacing between elements**
+- **Lesson: Always add unique key prop when using map with React Fragments**
+- **Lesson: Use default export for main components to avoid import/export conflicts**
+- **Lesson: Use useEffect for data fetching in functional components**
+- **Lesson: Use mock data for development while waiting for real API implementation**
+- **Lesson: Use Platform.select for platform-specific tab bar styling**
+- **Lesson: Add border radius to iOS tab bar for modern look**
+- **Lesson: Use semantic Arabic names for tab bar items**
+- **Lesson: Maintain consistent icon sizing across tab bar items**
+- **Lesson: Use consistent icon sizing (28px) for tab bar items**
+- **Lesson: Organize custom icons in dedicated components folder**
+- **Lesson: Always create index files for component directories**
+- **Lesson: Use consistent SVG icon sizing and props**
+- **Lesson: Add TypeScript interfaces for icon component props**
+- **Lesson: Set default icon size in component props**
+- **Lesson: Add accessibilityRole to SVG icons for better screen reader support**
+- **Lesson: Use 'currentColor' as default SVG fill to inherit parent color**
+- **Lesson: Use descriptive Arabic labels for navigation items**
+- **Lesson: Maintain consistent icon sizing across all tabs**
+- **Lesson: Organize navigation items by priority (Restaurants first)**
+- **Lesson: Keep navigation structure simple and focused on core features**
+- **Lesson: Remove unused screens to maintain clean codebase**
+- **Lesson: Maintain minimal navigation structure for better user focus**
+- **Lesson: Use clear Arabic labels for core features**
 
 # Scratchpad

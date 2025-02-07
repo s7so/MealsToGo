@@ -1,0 +1,9 @@
+app/
+├─ components/
+│  └─ ui/
+│     └─ icons/
+│        ├─ index.ts
+│        ├─ HouseIcon.tsx
+│        ├─ SearchIcon.tsx
+│        ├─ HeartIcon.tsx
+│        └─ ProfileIcon.tsx 

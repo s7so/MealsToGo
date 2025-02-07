@@ -2,6 +2,7 @@ import React from 'react';
 import SvgStar from '../../../components/SvgStar';
 import styled from 'styled-components/native';
 import { colors } from '../infrastructure/theme/colors';
+import { Spacer } from '../../../components/Spacer';
 
 
 const RatingContainer = styled.View`
@@ -18,7 +19,10 @@ const Rating = ({ rating, color = colors.ui.quaternary }) => {
   return (
     <RatingContainer>
       {[...Array(fullStars)].map((_, i) => (
-        <SvgStar key={`full-${i}`} color={color} size={16} />
+        <React.Fragment key={`star-${i}`}>
+          <SvgStar color={color} size={16} />
+          <Spacer position="right" size={2} />
+        </React.Fragment>
       ))}
       {hasHalfStar && <SvgStar filled={false} color={color} size={16} />}
 
